@@ -73,15 +73,11 @@ public class Player {
     }
     public void getCoinPosition() {
         coinPosition = 1;
-        setCoinPosition(coinPosition);
+        translatePlayer();
     }
     public void setCoinPosition(int coinPosition) {
         this.coinPosition = coinPosition;
-        setCoin();
+        getCoinPosition();
     }
 
-    public void setCoin() {
-        coin.setTranslateX(25);
-        coin.setTranslateY(475);
-    }
 }

@@ -24,8 +24,8 @@ public class SnakeLadder extends Application {
     Button playerTwoButton = new Button("Player Two");
     public int diceValue;
     Label rolledDiceValueLabel;
-    Player firstPlayer = new Player(tileSize-10, Color.DEEPPINK, Color.GREENYELLOW, "  Krishna");
-    Player secondPlayer = new Player(tileSize-10, Color.DARKORANGE, Color.GREENYELLOW, "    Devi");
+    Player firstPlayer = new Player(tileSize-10, Color.DEEPPINK, Color.GREENYELLOW, "Krishna");
+    Player secondPlayer = new Player(tileSize-10, Color.DARKORANGE, Color.GREENYELLOW, "  Devi");
 
     Pane createContent(){
         Pane root = new Pane();
@@ -63,7 +63,7 @@ public class SnakeLadder extends Application {
         startGameButton.setTextFill(Color.WHITE);
         startGameButton.setStyle("-fx-background-color: GREEN;margin: 25px;");
         startGameButton.setFont(Font.font("Comic Sans MS", FontWeight.BOLD,13));
-        startGameButton.setTranslateX((tileSize*width)/2-35);
+        startGameButton.setTranslateX((tileSize*width)/2-43);
         startGameButton.setTranslateY(tileSize*height +50);
         startGameButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -73,7 +73,7 @@ public class SnakeLadder extends Application {
                     secondPlayer.getCoinPosition();
 
                     rolledDiceValueLabel.setText("Game Started");
-                    rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 33);
+                    rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 38);
                     rolledDiceValueLabel.setTextFill(Color.WHITE);
 
                     startButton = false;
@@ -82,7 +82,7 @@ public class SnakeLadder extends Application {
                     playerOneButton.setDisable(false);
 
                     startGameButton.setText("Game Ongoing");
-                    startGameButton.setTranslateX((tileSize*width)/2-45);
+                    startGameButton.setTranslateX((tileSize*width)/2-50);
 
                 }
             }
@@ -91,7 +91,7 @@ public class SnakeLadder extends Application {
         // Player One Button
         playerOneButton.setTextFill(Color.DEEPPINK);
         playerOneButton.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 13));
-        playerOneButton.setTranslateX(tileSize);
+        playerOneButton.setTranslateX(tileSize-13);
         playerOneButton.setTranslateY(tileSize*height+13);
         playerOneButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -151,7 +151,7 @@ public class SnakeLadder extends Application {
         diceValue = (int) (Math.random()*6+1); // random() generates value between 0 and 1
         rolledDiceValueLabel.setText(player + " Dice Value : " + diceValue);
 
-        rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 48);
+        rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 52);
         rolledDiceValueLabel.setTextFill(textColor);
     }
 
