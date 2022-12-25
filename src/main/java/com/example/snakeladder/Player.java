@@ -15,13 +15,12 @@ public class Player {
     private static PositionCoordinates coinPositionCoordinates = new PositionCoordinates();
 
     public Player(int tileSize, Color coinColor, Color stroke, String playerName){
-        coinPosition = 1;
+        coinPosition = 0;
         name = playerName;
         coin = new Circle(tileSize/2);
         coin.setFill(coinColor);
         coin.setStroke(stroke);
-        coin.setPickOnBounds(true);
-        coin.setTranslateX(25);
+        coin.setTranslateX(-25);
         coin.setTranslateY(475);
     }
 
@@ -32,6 +31,7 @@ public class Player {
             coinPosition += diceValue;
 //            coin.setTranslateX(gameBoard.getXCoordinate(coinPosition));
 //            coin.setTranslateY(gameBoard.getYCoordinate(coinPosition));
+            if(coinPosition == 1) coinPosition = 38;
             if(coinPosition == 4) coinPosition = 14;
             if(coinPosition == 9) coinPosition = 31;
             if(coinPosition == 17) coinPosition = 7;
@@ -72,7 +72,7 @@ public class Player {
         return coin;
     }
     public void getCoinPosition() {
-        coinPosition = 1;
+        coinPosition = 0;
         translatePlayer();
     }
     public void setCoinPosition(int coinPosition) {

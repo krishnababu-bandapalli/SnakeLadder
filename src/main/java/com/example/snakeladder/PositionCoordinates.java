@@ -13,7 +13,7 @@ public class PositionCoordinates {
 
     private void populatePositionCoordinates(){
         positionCoordinates = new ArrayList<>();
-        positionCoordinates.add(new Pair<Integer, Integer>(0,0));//dummy Values added at Zero index
+        positionCoordinates.add(new Pair<Integer, Integer>(-25,475));//dummy Values added at Zero index
         int x = 1, y = 10, xPos, yPos;
         for (int i = 0; i < SnakeLadder.height ; i++) {
             x = 1;
