@@ -24,8 +24,8 @@ public class SnakeLadder extends Application {
     Button playerTwoButton = new Button("Player Two");
     public int diceValue;
     Label rolledDiceValueLabel;
-    Player firstPlayer = new Player(tileSize-10, Color.DEEPPINK, Color.GREENYELLOW, "Krishna");
-    Player secondPlayer = new Player(tileSize-10, Color.DARKORANGE, Color.GREENYELLOW, " Devi");
+    Player firstPlayer = new Player(tileSize-10, Color.DEEPPINK, Color.GREENYELLOW, "  Krishna");
+    Player secondPlayer = new Player(tileSize-10, Color.DARKORANGE, Color.GREENYELLOW, "    Devi");
 
     Pane createContent(){
         Pane root = new Pane();
@@ -73,7 +73,7 @@ public class SnakeLadder extends Application {
                     secondPlayer.getCoinPosition();
 
                     rolledDiceValueLabel.setText("Game Started");
-                    rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 35);
+                    rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 33);
                     rolledDiceValueLabel.setTextFill(Color.WHITE);
 
                     startButton = false;
@@ -151,7 +151,7 @@ public class SnakeLadder extends Application {
         diceValue = (int) (Math.random()*6+1); // random() generates value between 0 and 1
         rolledDiceValueLabel.setText(player + " Dice Value : " + diceValue);
 
-        rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 54);
+        rolledDiceValueLabel.setTranslateX((tileSize*width)/2 - 48);
         rolledDiceValueLabel.setTextFill(textColor);
     }
 

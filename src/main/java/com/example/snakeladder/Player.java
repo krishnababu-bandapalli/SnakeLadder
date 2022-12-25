@@ -61,7 +61,7 @@ public class Player {
         return null;
     }
     private void translatePlayer(){
-        TranslateTransition move = new TranslateTransition(Duration.millis(500), this.coin);
+        TranslateTransition move = new TranslateTransition(Duration.millis(600), this.coin);
         move.setToX(coinPositionCoordinates.getXCoordinate(coinPosition));
         move.setToY(coinPositionCoordinates.getYCoordinate(coinPosition));
         move.setAutoReverse(false);
