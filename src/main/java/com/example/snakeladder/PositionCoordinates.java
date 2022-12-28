@@ -5,6 +5,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 public class PositionCoordinates {
+    Build_UI_UX buildUIUX = new Build_UI_UX();
 
     public PositionCoordinates(){
         populatePositionCoordinates();
@@ -13,19 +14,20 @@ public class PositionCoordinates {
 
     private void populatePositionCoordinates(){
         positionCoordinates = new ArrayList<>();
-        positionCoordinates.add(new Pair<Integer, Integer>(-25,475));//dummy Values added at Zero index
-        int x = 1, y = 10, xPos, yPos;
-        for (int i = 0; i < SnakeLadder.height ; i++) {
+        positionCoordinates.add(new Pair<>(-25, 475));//dummy Values added at Zero index
+        int x, y = 10, xPos, yPos;
+        for (int i = 0; i < buildUIUX.height ; i++) {
+
             x = 1;
-            for (int j = 0; j < SnakeLadder.width; j++) {
+            for (int j = 0; j < buildUIUX.width; j++) {
                 if(y%2==0){
-                    xPos = x* SnakeLadder.tileSize - SnakeLadder.tileSize/2;
+                    xPos = x* buildUIUX.tileSize - buildUIUX.tileSize/2;
                 }
                 else {
-                    xPos = SnakeLadder.width* SnakeLadder.tileSize - (x*SnakeLadder.tileSize - SnakeLadder.tileSize/2);
+                    xPos = buildUIUX.width* buildUIUX.tileSize - (x* buildUIUX.tileSize - buildUIUX.tileSize/2);
                 }
-                yPos = y* SnakeLadder.tileSize - SnakeLadder.tileSize/2;
-                positionCoordinates.add(new Pair<Integer,Integer>(xPos, yPos));
+                yPos = y* buildUIUX.tileSize - buildUIUX.tileSize/2;
+                positionCoordinates.add(new Pair<>(xPos, yPos));
                 x++;
             }
             y--;

@@ -11,8 +11,7 @@ public class Player {
     private String name;
     private int coinPosition;
 
-    private static PositionCoordinates coinPositionCoordinates = new PositionCoordinates();
-    private Effect effect = new Effect();
+    private static final PositionCoordinates coinPositionCoordinates = new PositionCoordinates();
 
     public Player(int tileSize, Color coinColor, Color stroke, String playerName){
         coinPosition = 0;
@@ -110,8 +109,7 @@ public class Player {
 
     public String playerWon(){
         if(coinPosition == 100) {
-            String won = name + " won the GAME!";
-            return won;
+            return "Congratulations " + name + "! \n  You won the GAME!";
         }
         return null;
     }
@@ -122,10 +120,6 @@ public class Player {
     public void getCoinPosition() {
         coinPosition = 0;
         translatePlayer();
-    }
-    public void setCoinPosition(int coinPosition) {
-        this.coinPosition = coinPosition;
-        getCoinPosition();
     }
 
 }
