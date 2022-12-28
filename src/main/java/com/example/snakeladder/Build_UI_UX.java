@@ -18,28 +18,22 @@ public class Build_UI_UX {
     public  final int tileSize = 50, width = 10, height = 10;
     boolean firstPlayerTurn = false, secondPlayerTurn = false, startButton = true;
     public int diceValue;
+    private Label label;
     private Button playerOneButton;
     private Button playerTwoButton;
     private Button startGameButton;
-    private Label label;
     Player firstPlayer = new Player(40, Color.DEEPPINK, Color.GREENYELLOW, "Krishna");
     Player secondPlayer = new Player(40, Color.DARKORANGE, Color.GREENYELLOW, "Devi");
     public Build_UI_UX() {
 
     }
-    Circle firstPlayerCoin() {
-        return firstPlayer.getCoin();
-    }
-    Circle secondPlayerCoin() {
-        return secondPlayer.getCoin();
-    }
     Label setLabel() {         // Set Label position to Display output
         label = new Label();
         label.setTranslateY(-10);
+        label.setFont(new Font("Times New Roman", 14));
         label.setAlignment(Pos.CENTER);
         label.setTextAlignment(TextAlignment.CENTER);
         label.setWrapText(true);
-        label.setTextFill(Color.WHITE);
 
         return label;
     }
@@ -137,10 +131,10 @@ public class Build_UI_UX {
         startGameButton.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 12));
         startGameButton.setOnAction(actionEvent -> {
             if(startButton){
-                firstPlayer.getCoinPosition();
-                secondPlayer.getCoinPosition();
+                firstPlayer.getCoinStartPosition();
+                secondPlayer.getCoinStartPosition();
 
-                setDisplayText("Game Started", Color.WHITE);
+                setDisplayText("Game Started......", Color.GREEN);
                 setTextToStartButton("Game Ongoing");
 
                 startButton = false;
@@ -179,6 +173,12 @@ public class Build_UI_UX {
         setTextToStartButton("Restart Game");
         playerOneButton.setDisable(true);
         playerTwoButton.setDisable(true);
+    }
+    Circle firstPlayerCoin() {
+        return firstPlayer.getCoin();
+    }
+    Circle secondPlayerCoin() {
+        return secondPlayer.getCoin();
     }
 
 }

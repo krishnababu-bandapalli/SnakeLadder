@@ -30,8 +30,8 @@ public class Player {
         if(coinPosition + diceValue <= 100) {
             coinPosition += diceValue;
             translatePlayer();
-            TranslateTransition transition1 = translatePlayer();
 
+            TranslateTransition transition1 = translatePlayer();
             boolean moveSnakeLadder = false;
 
             if(coinPosition == 1 || coinPosition == 4 || coinPosition == 9 || coinPosition == 21
@@ -68,10 +68,8 @@ public class Player {
         if(coinPosition == 71) coinPosition = 91;
         if(coinPosition == 80) coinPosition = 99;
 
-//        pauseTransition.getDelay(Duration.millis(100.0, translatePlayer()));
-//        translatePlayer();
+        // translatePlayer();
     }
-
 
     private void snakePosition() {
         if(coinPosition == 17) coinPosition = 7;
@@ -86,7 +84,7 @@ public class Player {
 //        translatePlayer();
     }
     private TranslateTransition translatePlayer(){
-        TranslateTransition move = new TranslateTransition(Duration.millis(400), this.coin);
+        TranslateTransition move = new TranslateTransition(Duration.millis(450), this.coin);
         move.setToX(coinPositionCoordinates.getXCoordinate(coinPosition));
         move.setToY(coinPositionCoordinates.getYCoordinate(coinPosition));
         move.setAutoReverse(false);
@@ -104,7 +102,7 @@ public class Player {
     public Circle getCoin() {
         return coin;
     }
-    public void getCoinPosition() {
+    public void getCoinStartPosition() {
         this.coinPosition = 0;
         coin.setTranslateX(-25);
         coin.setTranslateY(475);
