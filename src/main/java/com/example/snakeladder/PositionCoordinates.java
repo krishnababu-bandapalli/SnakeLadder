@@ -40,12 +40,4 @@ public class PositionCoordinates {
         return positionCoordinates.get(position).getValue();
     }
 
-//    public static void main(String[] args) {
-//        PositionCoordinates board = new PositionCoordinates();
-//        board.populatePositionCoordinates();
-//        for (int i = 0; i < board.positionCoordinates.size(); i++) {
-//            System.out.println(i+"# x: " + board.positionCoordinates.get(i).getKey() + " y: "+
-//                    board.positionCoordinates.get(i).getValue());
-//        }
-//    }
 }
