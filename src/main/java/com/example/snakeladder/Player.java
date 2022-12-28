@@ -49,7 +49,7 @@ public class Player {
 
             if(moveSnakeLadder) {
                 TranslateTransition transition2 = translatePlayer();
-                SequentialTransition seqTransition = new SequentialTransition (transition1, new PauseTransition(Duration.millis(0.0)),transition2);
+                SequentialTransition seqTransition = new SequentialTransition (transition1, new PauseTransition(Duration.millis(0.3)),transition2);
                 seqTransition.play();
             }
             else transition1.play();
@@ -96,7 +96,7 @@ public class Player {
 
     public String playerWon(){
         if(coinPosition == 100) {
-            return "Congratulations " + name + "! \n  You won the GAME!";
+            return "Congratulations! " + name + "\nYou won the GAME!";
         }
         return null;
     }

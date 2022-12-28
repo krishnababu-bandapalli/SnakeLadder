@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 
 
 public class Build_UI_UX {
@@ -35,12 +36,15 @@ public class Build_UI_UX {
     Label setLabel() {         // Set Label position to Display output
         label = new Label();
         label.setTranslateY(-10);
+        label.setAlignment(Pos.CENTER);
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setWrapText(true);
         label.setTextFill(Color.WHITE);
 
         return label;
     }
 
-    Pane setBoard() {                 // Return pane to add to the top of the root (BorderPane)
+    Pane setBoard() {         // Return pane to add to the top of the root (BorderPane)
         Pane pane = new Pane();
         pane.setPrefSize(500.0,500.0);
 
@@ -58,7 +62,7 @@ public class Build_UI_UX {
     }
 
 
-    ImageView setImage() {           // Set Board Image
+    ImageView setImage() {        // Set Board Image
         Image image = new Image("C:\\Users\\krish_uv7qyqm\\IdeaProjects\\SnakeLadder\\src\\main\\Snake and Ladder.jpg");
         ImageView boardImage = new ImageView(image);
         boardImage.setImage(image);
@@ -157,6 +161,7 @@ public class Build_UI_UX {
 
     public void setDisplayText(String text, Color textColor) {  // Set text to display output
        label.setText(text);
+       label.setMaxWidth(150);
        label.setTextFill(textColor);
     }
 
