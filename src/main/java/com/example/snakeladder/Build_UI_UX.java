@@ -17,9 +17,9 @@ public class Build_UI_UX {
     public  final int tileSize = 50, width = 10, height = 10;
     boolean firstPlayerTurn = false, secondPlayerTurn = false, startButton = true;
     public int diceValue;
-    Button playerOneButton;
-    Button playerTwoButton;
-    Button startGameButton;
+    private Button playerOneButton;
+    private Button playerTwoButton;
+    private Button startGameButton;
     private Label label;
     Player firstPlayer = new Player(40, Color.DEEPPINK, Color.GREENYELLOW, "Krishna");
     Player secondPlayer = new Player(40, Color.DARKORANGE, Color.GREENYELLOW, "Devi");
