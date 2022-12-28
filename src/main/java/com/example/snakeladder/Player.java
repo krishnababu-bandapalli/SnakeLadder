@@ -29,7 +29,6 @@ public class Player {
 
         if(coinPosition + diceValue <= 100) {
             coinPosition += diceValue;
-            translatePlayer();
 
             TranslateTransition transition1 = translatePlayer();
             boolean moveSnakeLadder = false;
@@ -53,7 +52,6 @@ public class Player {
                 seqTransition.play();
             }
             else transition1.play();
-
         }
 
     }
